@@ -20,14 +20,27 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" data-translate="nav_home">Home</a></li>
+                    <li><a href="#about" data-translate="nav_about">About Us</a></li>
+                    <li><a href="#services" data-translate="nav_services">Services</a></li>
+                    <li><a href="#contact" data-translate="nav_contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="language-selector">
-                <button class="lang-btn"><i class="fas fa-globe"></i> IT <i class="fas fa-chevron-down"></i></button>
+                <button class="lang-btn" id="langBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">IT</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-dropdown" id="langDropdown">
+                    <div class="lang-option" data-lang="en">English</div>
+                    <div class="lang-option" data-lang="es">Spanish</div>
+                    <div class="lang-option" data-lang="fr">French</div>
+                    <div class="lang-option" data-lang="de">German</div>
+                    <div class="lang-option" data-lang="it">Italian</div>
+                    <div class="lang-option" data-lang="pt">Portuguese</div>
+                    <div class="lang-option" data-lang="ar">Arabic</div>
+                </div>
             </div>
         </div>
     </header>
@@ -36,10 +49,11 @@
     <section id="home" class="hero">
         <div class="container hero-container">
             <div class="hero-content">
-                <h1>Smarter Solutions for Better Future</h1>
-                <p>We empower businesses with intelligent technology solutions that drive innovation, enhance
+                <h1 data-translate="hero_title">Smarter Solutions for Better Future</h1>
+                <p data-translate="hero_description">We empower businesses with intelligent technology solutions that
+                    drive innovation, enhance
                     efficiency, and create sustainable value for tomorrow's digital landscape.</p>
-                <a href="#contact" class="btn btn-primary">Get Started</a>
+                <a href="#contact" class="btn btn-primary" data-translate="hero_cta">Get Started</a>
             </div>
             <div class="hero-image">
                 <div class="placeholder-image">Hero Image</div>
@@ -54,14 +68,17 @@
                 <div class="placeholder-image">About Image</div>
             </div>
             <div class="about-content">
-                <h2>About Us</h2>
-                <p>Navabharath Technologies is a leading IT solutions provider dedicated to delivering innovative and
+                <h2 data-translate="about_title">About Us</h2>
+                <p data-translate="about_description">Navabharath Technologies is a leading IT solutions provider
+                    dedicated to delivering innovative and
                     robust digital products. With a team of expert developers and designers, we transform ideas into
                     reality. Our mission is to empower businesses with scalable and efficient technology.</p>
                 <ul class="about-list">
-                    <li><i class="fas fa-check"></i> Innovative Solutions</li>
-                    <li><i class="fas fa-check"></i> Customer-Centric Approach</li>
-                    <li><i class="fas fa-check"></i> Expert Team</li>
+                    <li><i class="fas fa-check"></i> <span data-translate="about_feature1">Innovative Solutions</span>
+                    </li>
+                    <li><i class="fas fa-check"></i> <span data-translate="about_feature2">Customer-Centric
+                            Approach</span></li>
+                    <li><i class="fas fa-check"></i> <span data-translate="about_feature3">Expert Team</span></li>
                 </ul>
             </div>
         </div>
@@ -71,29 +88,33 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Our Services</h2>
-                <p>Comprehensive solutions for your business needs</p>
+                <h2 data-translate="services_title">Our Services</h2>
+                <p data-translate="services_subtitle">Comprehensive solutions for your business needs</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Web Development</h3>
-                    <p>Custom websites built with modern technologies to ensure performance and scalability.</p>
+                    <h3 data-translate="service1_title">Web Development</h3>
+                    <p data-translate="service1_description">Custom websites built with modern technologies to ensure
+                        performance and scalability.</p>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Mobile App Development</h3>
-                    <p>Native and cross-platform mobile applications designed for seamless user experiences.</p>
+                    <h3 data-translate="service2_title">Mobile App Development</h3>
+                    <p data-translate="service2_description">Native and cross-platform mobile applications designed for
+                        seamless user experiences.</p>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-cloud"></i></div>
-                    <h3>Cloud Solutions</h3>
-                    <p>Secure and scalable cloud infrastructure setup and management services.</p>
+                    <h3 data-translate="service3_title">Cloud Solutions</h3>
+                    <p data-translate="service3_description">Secure and scalable cloud infrastructure setup and
+                        management services.</p>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-palette"></i></div>
-                    <h3>UI/UX Design</h3>
-                    <p>User-centered design that creates engaging and intuitive digital products.</p>
+                    <h3 data-translate="service4_title">UI/UX Design</h3>
+                    <p data-translate="service4_description">User-centered design that creates engaging and intuitive
+                        digital products.</p>
                 </div>
             </div>
         </div>
@@ -103,8 +124,8 @@
     <section id="contact" class="contact">
         <div class="container contact-container">
             <div class="contact-info">
-                <h2>Contact Us</h2>
-                <p>Ready to start your project? Get in touch with us today.</p>
+                <h2 data-translate="contact_title">Contact Us</h2>
+                <p data-translate="contact_subtitle">Ready to start your project? Get in touch with us today.</p>
                 <div class="contact-details">
                     <div class="detail-item">
                         <i class="fas fa-envelope"></i>
@@ -123,18 +144,18 @@
             <div class="contact-form">
                 <form>
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name" data-translate="form_name">Name</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email" data-translate="form_email">Email</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
+                        <label for="message" data-translate="form_message">Message</label>
                         <textarea id="message" name="message" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary" data-translate="form_submit">Send Message</button>
                 </form>
             </div>
         </div>
@@ -145,19 +166,19 @@
         <div class="container footer-container">
             <div class="footer-logo">
                 <img src="assets/logo.png" alt="Navabharath Technologies">
-                <p>Empowering Your Digital Future.</p>
+                <p data-translate="footer_tagline">Empowering Your Digital Future.</p>
             </div>
             <div class="footer-links">
-                <h4>Quick Links</h4>
+                <h4 data-translate="footer_links_title">Quick Links</h4>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" data-translate="nav_home">Home</a></li>
+                    <li><a href="#about" data-translate="footer_about">About</a></li>
+                    <li><a href="#services" data-translate="footer_services">Services</a></li>
+                    <li><a href="#contact" data-translate="footer_contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-social">
-                <h4>Follow Us</h4>
+                <h4 data-translate="footer_social_title">Follow Us</h4>
                 <div class="social-icons">
                     <a href="#">FB</a>
                     <a href="#">TW</a>
@@ -167,7 +188,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 Navabharath Technologies. All rights reserved.</p>
+            <p data-translate="footer_copyright">&copy; 2023 Navabharath Technologies. All rights reserved.</p>
         </div>
     </footer>
 

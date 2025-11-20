@@ -73,12 +73,10 @@ header {
     display: flex;
     align-items: center;
     gap: 40px;
-    /* Gap between Nav and Lang */
 }
 
 .logo {
     margin-right: auto;
-    /* Pushes Nav and Lang to the right */
 }
 
 .logo img {
@@ -95,6 +93,11 @@ nav a {
     color: var(--primary-color);
 }
 
+/* Language Selector */
+.language-selector {
+    position: relative;
+}
+
 .language-selector .lang-btn {
     background: none;
     border: 1px solid #ddd;
@@ -105,6 +108,57 @@ nav a {
     align-items: center;
     gap: 8px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-selector .lang-btn:hover {
+    border-color: var(--primary-color);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.language-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    padding: 12px 20px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.lang-option:first-child {
+    border-radius: 12px 12px 0 0;
+}
+
+.lang-option:last-child {
+    border-radius: 0 0 12px 12px;
+}
+
+.lang-option:hover {
+    background-color: #f5f5f5;
+}
+
+.lang-option.active {
+    background-color: #e6f2ff;
+    color: var(--primary-color);
 }
 
 /* Hero Section */
@@ -199,7 +253,6 @@ nav a {
 
 .about-list i {
     color: #3b82f6;
-    /* Lighter blue for checks */
 }
 
 /* Services Section */
@@ -245,32 +298,24 @@ nav a {
 .service-card .icon {
     font-size: 2.5rem;
     color: #a855f7;
-    /* Example purple, adjust per image */
     margin-bottom: 20px;
 }
 
-/* Adjust icon colors individually if needed based on screenshots */
 .service-card:nth-child(1) .icon {
     color: #3b82f6;
 }
 
-/* Web - Blue */
 .service-card:nth-child(2) .icon {
     color: #8b5cf6;
 }
 
-/* Mobile - Purple */
 .service-card:nth-child(3) .icon {
     color: #64748b;
 }
 
-/* Cloud - Greyish */
 .service-card:nth-child(4) .icon {
     color: #f43f5e;
 }
-
-/* UI/UX - Pinkish */
-
 
 .service-card h3 {
     color: var(--primary-color);
@@ -318,7 +363,6 @@ nav a {
 
 .detail-item i {
     color: #ec4899;
-    /* Pinkish icon color from description/standard modern look */
     width: 20px;
 }
 
@@ -326,7 +370,6 @@ nav a {
     flex: 1;
     background: var(--white);
     padding: 10px;
-    /* Minimal padding as per clean design */
 }
 
 .form-group {
@@ -358,7 +401,6 @@ nav a {
 /* Footer */
 footer {
     background-color: #0a101e;
-    /* Very dark navy/black from image */
     color: var(--white);
     padding: 60px 0 20px;
 }
@@ -367,10 +409,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    /* Align top */
     margin-bottom: 40px;
     padding: 0 50px;
-    /* Add some side padding if needed */
 }
 
 .footer-logo {
@@ -380,7 +420,6 @@ footer {
 
 .footer-logo img {
     height: 60px;
-    /* Slightly larger logo */
     margin-bottom: 15px;
     display: block;
 }
@@ -400,29 +439,23 @@ footer {
 
 .footer-links {
     align-items: center;
-    /* Center the links column */
 }
 
 .footer-social {
     align-items: flex-end;
-    /* Right align the social column */
 }
 
-/* Headings */
 .footer-links h4,
 .footer-social h4 {
     margin-bottom: 20px;
     font-size: 1rem;
     color: #3b82f6;
-    /* Bright blue for headers */
     font-weight: 600;
     text-transform: uppercase;
-    /* Optional, looks like it might be */
 }
 
 .footer-links ul {
     text-align: left;
-    /* Links text aligned left within the centered block */
 }
 
 .footer-links ul li {
@@ -449,7 +482,6 @@ footer {
     width: 40px;
     height: 40px;
     background-color: #1e293b;
-    /* Dark grey/blue circle */
     border-radius: 50%;
     display: flex;
     align-items: center;
