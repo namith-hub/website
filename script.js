@@ -46,7 +46,7 @@ const translations = {
         footer_services: "Services",
         footer_contact: "Contact",
         footer_social_title: "Follow Us",
-        footer_copyright: "© 2023 Navabharath Technologies. All rights reserved."
+        footer_copyright: "© 2025 Navabharath Technologies. All rights reserved."
     },
     es: {
         nav_home: "Inicio",
@@ -83,7 +83,7 @@ const translations = {
         footer_services: "Servicios",
         footer_contact: "Contacto",
         footer_social_title: "Síguenos",
-        footer_copyright: "© 2023 Navabharath Technologies. Todos los derechos reservados."
+        footer_copyright: "© 2025 Navabharath Technologies. Todos los derechos reservados."
     },
     fr: {
         nav_home: "Accueil",
@@ -120,7 +120,7 @@ const translations = {
         footer_services: "Services",
         footer_contact: "Contact",
         footer_social_title: "Suivez-Nous",
-        footer_copyright: "© 2023 Navabharath Technologies. Tous droits réservés."
+        footer_copyright: "© 2025 Navabharath Technologies. Tous droits réservés."
     },
     de: {
         nav_home: "Startseite",
@@ -157,7 +157,7 @@ const translations = {
         footer_services: "Dienstleistungen",
         footer_contact: "Kontakt",
         footer_social_title: "Folgen Sie Uns",
-        footer_copyright: "© 2023 Navabharath Technologies. Alle Rechte vorbehalten."
+        footer_copyright: "© 2025 Navabharath Technologies. Alle Rechte vorbehalten."
     },
     it: {
         nav_home: "Home",
@@ -194,7 +194,7 @@ const translations = {
         footer_services: "Servizi",
         footer_contact: "Contatti",
         footer_social_title: "Seguici",
-        footer_copyright: "© 2023 Navabharath Technologies. Tutti i diritti riservati."
+        footer_copyright: "© 2025 Navabharath Technologies. Tutti i diritti riservati."
     },
     pt: {
         nav_home: "Início",
@@ -231,7 +231,7 @@ const translations = {
         footer_services: "Serviços",
         footer_contact: "Contato",
         footer_social_title: "Siga-nos",
-        footer_copyright: "© 2023 Navabharath Technologies. Todos os direitos reservados."
+        footer_copyright: "© 2025 Navabharath Technologies. Todos os direitos reservados."
     },
     ar: {
         nav_home: "الرئيسية",
@@ -268,7 +268,7 @@ const translations = {
         footer_services: "الخدمات",
         footer_contact: "اتصل بنا",
         footer_social_title: "تابعنا",
-        footer_copyright: "© 2023 Navabharath Technologies. جميع الحقوق محفوظة."
+        footer_copyright: "© 2025 Navabharath Technologies. جميع الحقوق محفوظة."
     }
 };
 
