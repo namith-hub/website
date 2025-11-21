@@ -350,6 +350,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Custom Notification Function
+    function showNotification(message, type = 'success') {
+        const notification = document.getElementById('customNotification');
+        notification.textContent = message;
+        notification.className = `custom-notification ${type} show`;
+
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 5000);
+    }
+
     // Form submission handler
     const form = document.querySelector('form');
     if (form) {
@@ -367,14 +379,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Basic Validation
             if (!name || !email || !message) {
-                alert('Please fill in all fields.');
+                showNotification('Please fill in all fields.', 'error');
                 return;
             }
 
             // Email Validation Regex
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address.');
+                showNotification('Please enter a valid email address.', 'error');
                 return;
             }
 
@@ -384,6 +396,8 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = 'Sending...';
 
             try {
+                console.log('Sending email...');
+
                 const response = await fetch('http://localhost:3000/send-email', {
                     method: 'POST',
                     headers: {
@@ -392,21 +406,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify({ name, email, message })
                 });
 
-                const data = await response.json();
+                console.log('Response received:', response.status, response.ok);
 
-                if (response.ok && data.success) {
-                    alert('✅ Your message has been sent successfully. We will be in touch soon!');
+                let data;
+                try {
+                    data = await response.json();
+                    console.log('Response data:', data);
+                } catch (jsonError) {
+                    console.error('JSON parse error:', jsonError);
+                    throw new Error('Invalid server response');
+                }
+
+                if (response.ok) {
+                    // Success!
+                    console.log('Email sent successfully!');
+                    showNotification(' Your message has been sent successfully. We will be in touch soon!', 'success');
                     form.reset();
                 } else {
-                    throw new Error(data.message || 'Failed to send message');
+                    // Server returned an error
+                    console.error('Server error:', data);
+                    throw new Error(data.message || 'Server error occurred');
                 }
             } catch (error) {
-                console.error('Error:', error);
-                alert('❌ Message failed to send. Please try again later or contact us directly.');
+                console.error('Fetch error:', error);
+                showNotification(' Message failed to send. Please try again later or contact us directly.', 'error');
             } finally {
-                // Restore button state
+                // Always restore button state
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalBtnText;
+                console.log('Form submission complete');
             }
         });
     }
