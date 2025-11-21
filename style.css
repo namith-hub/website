@@ -296,25 +296,37 @@ nav a {
 }
 
 .service-card .icon {
+    margin-bottom: 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card .icon img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.service-card .icon i {
     font-size: 2.5rem;
     color: #a855f7;
-    margin-bottom: 20px;
 }
 
-.service-card:nth-child(1) .icon {
-    color: #3b82f6;
+.service-card:nth-child(5) .icon {
+    color: #f59e0b;
+    /* Orange/Yellow */
 }
 
-.service-card:nth-child(2) .icon {
-    color: #8b5cf6;
+.service-card:nth-child(6) .icon {
+    color: #06b6d4;
+    /* Cyan */
 }
 
-.service-card:nth-child(3) .icon {
-    color: #64748b;
-}
-
-.service-card:nth-child(4) .icon {
-    color: #f43f5e;
+.service-card:nth-child(7) .icon {
+    color: #6366f1;
+    /* Indigo */
 }
 
 .service-card h3 {
