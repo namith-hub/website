@@ -359,4 +359,132 @@ document.addEventListener('DOMContentLoaded', () => {
             form.reset();
         });
     }
+
+    // Search Functionality
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const voiceSearchBtn = document.getElementById('voiceSearchBtn');
+
+    // Search function with page navigation
+    function performSearch(query) {
+        const searchTerm = query.toLowerCase().trim();
+
+        // Always keep all service cards visible
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.style.display = 'block';
+        });
+
+        // If no search term, do nothing
+        if (!searchTerm) {
+            return;
+        }
+
+        // Define known pages and their corresponding section IDs
+        const pageMapping = {
+            'home': '#home',
+            'about': '#about',
+            'about us': '#about',
+            'services': '#services',
+            'service': '#services',
+            'contact': '#contact',
+            'contact us': '#contact'
+        };
+
+        // Check if search term matches any known page
+        let matchFound = false;
+        for (const [pageName, sectionId] of Object.entries(pageMapping)) {
+            if (searchTerm === pageName || searchTerm.includes(pageName)) {
+                // Navigate to the matching page section
+                const targetSection = document.querySelector(sectionId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    matchFound = true;
+
+                    // Update URL hash without triggering page reload
+                    if (window.history.pushState) {
+                        window.history.pushState(null, null, sectionId);
+                    } else {
+                        window.location.hash = sectionId;
+                    }
+                    break;
+                }
+            }
+        }
+
+        // If no match found, show message
+        if (!matchFound) {
+            alert('No matching page found. Please try searching for: Home, About, Services, or Contact.');
+        }
+
+        // Clear search input after search
+        if (searchInput) {
+            searchInput.value = '';
+        }
+    }
+
+    // Search button click
+    if (searchBtn) {
+        searchBtn.addEventListener('click', () => {
+            performSearch(searchInput.value);
+        });
+    }
+
+    // Search on Enter key
+    if (searchInput) {
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch(searchInput.value);
+            }
+        });
+    }
+
+    // Voice Search Functionality
+    if (voiceSearchBtn) {
+        // Check if browser supports speech recognition
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        if (SpeechRecognition) {
+            const recognition = new SpeechRecognition();
+            recognition.lang = currentLang === 'en' ? 'en-US' :
+                currentLang === 'es' ? 'es-ES' :
+                    currentLang === 'fr' ? 'fr-FR' :
+                        currentLang === 'de' ? 'de-DE' :
+                            currentLang === 'it' ? 'it-IT' :
+                                currentLang === 'pt' ? 'pt-PT' :
+                                    currentLang === 'ar' ? 'ar-SA' : 'en-US';
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            voiceSearchBtn.addEventListener('click', () => {
+                voiceSearchBtn.classList.add('listening');
+                recognition.start();
+            });
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                searchInput.value = transcript;
+                performSearch(transcript);
+                voiceSearchBtn.classList.remove('listening');
+            };
+
+            recognition.onerror = (event) => {
+                console.error('Speech recognition error:', event.error);
+                voiceSearchBtn.classList.remove('listening');
+                if (event.error === 'no-speech') {
+                    alert('No speech detected. Please try again.');
+                } else if (event.error === 'not-allowed') {
+                    alert('Microphone access denied. Please enable microphone permissions.');
+                }
+            };
+
+            recognition.onend = () => {
+                voiceSearchBtn.classList.remove('listening');
+            };
+        } else {
+            // Hide voice search button if not supported
+            voiceSearchBtn.style.display = 'none';
+            console.warn('Speech recognition not supported in this browser');
+        }
+    }
 });
