@@ -80,7 +80,7 @@ header {
 }
 
 .logo img {
-    height: 60px;
+    height: 85px;
 }
 
 nav ul {
@@ -287,6 +287,16 @@ nav a {
     font-size: 1.5rem;
     font-weight: 500;
 }
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
 
 /* About Section */
 .about {
