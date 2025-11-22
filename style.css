@@ -583,6 +583,13 @@ footer {
     background-color: var(--primary-color);
 }
 
+.social-icons a.x-twitter-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+
 .footer-bottom {
     text-align: center;
     padding-top: 30px;
