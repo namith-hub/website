@@ -14,10 +14,11 @@ const translations = {
 
         // About Section
         about_title: "About Us",
-        about_description: "Navabharath Technologies is a leading IT solutions provider dedicated to delivering innovative and robust digital products. With a team of expert developers and designers, we transform ideas into reality. Our mission is to empower businesses with scalable and efficient technology.",
+        about_description: "Navabharath Technologies is a leading IT solutions provider dedicated to delivering innovative and robust digital products. With a team of expert developers and designers, we transform ideas into reality. Our mission is to empower businesses with scalable, efficient technology and comprehensive end-to-end services.",
         about_feature1: "Innovative Solutions",
-        about_feature2: "Customer-Centric Approach",
-        about_feature3: "Expert Team",
+        about_feature2: "Digital Marketing",
+        about_feature3: "Customer-Centric Approach",
+        about_feature4: "Expert Team",
 
         // Services Section
         services_title: "Our Services",
@@ -40,7 +41,7 @@ const translations = {
         form_submit: "Send Message",
 
         // Footer
-        footer_tagline: "Empowering Your Digital Future.",
+        footer_tagline: "Smarter Solutions for Better Future.",
         footer_links_title: "Quick Links",
         footer_about: "About",
         footer_services: "Services",
