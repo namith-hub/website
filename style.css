@@ -608,30 +608,97 @@ footer {
     margin-top: 20px;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
 
-    .header-container,
+    .header-container {
+        justify-content: space-between;
+        position: relative;
+        gap: 10px;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1001;
+        order: 3;
+    }
+
+    .search-container {
+        display: flex;
+        width: auto;
+        margin: 0;
+        order: 2;
+        flex: 1;
+        justify-content: flex-end;
+        background: transparent;
+        padding: 0;
+    }
+
+    .search-input {
+        width: 100%;
+        max-width: 150px;
+        background: #f3f4f6;
+        border-radius: 20px;
+        padding: 6px 12px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--white);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 80px 20px;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        gap: 30px;
+        z-index: 1000;
+        order: 4;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .search-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
     .hero-container,
     .about-container,
     .contact-container,
     .footer-container {
         flex-direction: column;
         text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        margin: 20px 0;
-    }
-
-    .search-container {
-        margin: 10px 0;
-    }
-
-    .search-input {
-        width: 120px;
     }
 
     .hero-content h1 {
