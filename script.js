@@ -293,8 +293,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const langOptions = document.querySelectorAll('.lang-option');
     const currentLangSpan = document.getElementById('currentLang');
 
-    // Load saved language or default to Italian
-    let currentLang = localStorage.getItem('selectedLanguage') || 'it';
+    // Load saved language or default to English
+    let currentLang = localStorage.getItem('selectedLanguage') || 'en';
     updateLanguage(currentLang);
 
     // Toggle dropdown
