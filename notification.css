@@ -52,3 +52,27 @@
         opacity: 0;
     }
 }
+
+@media (max-width: 768px) {
+    .custom-notification {
+        right: 20px;
+        left: 20px;
+        min-width: auto;
+        width: auto;
+        max-width: none;
+        top: 20px;
+        text-align: center;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
